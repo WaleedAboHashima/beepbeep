@@ -367,6 +367,7 @@ const Current = () => {
           height: "100%",
           border: "1px solid black",
           "& .MuiTablePagination-root": { direction: "ltr" },
+          overflow: "auto"
         }}
         rows={rows.map((user, index) => ({
           id: index + 1,

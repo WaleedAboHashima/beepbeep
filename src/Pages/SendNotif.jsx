@@ -13,7 +13,7 @@ const SendNotif = () => {
       gap="150px"
       flexDirection="column"
       sx={{ backgroundColor: "#ffc90b" }}
-      height="100%"
+      height="100vh"
       width="100%"
     >
       <img

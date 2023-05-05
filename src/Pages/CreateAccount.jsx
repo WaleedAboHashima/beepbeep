@@ -6,7 +6,7 @@ const CreateAccount = () => {
         console.log("Here")
     }
     return (
-        <Box display="flex" flexDirection="column" alignItems="center" sx={{ backgroundColor: '#ffc90b' }} height="100%" width="100%">
+        <Box display="flex" flexDirection="column" alignItems="center" sx={{ backgroundColor: '#ffc90b' }} height="100vh" width="100%">
             <img src="../../assets/iconThink.png" width="472px" height="362px" style={{ margin: "50px" }} alt="Think Icon" />
             <Box width="100%" height="100%">
                 <Formik initialValues={initialState} onSubmit={formSubmit} validationSchema={validationSchema}>
