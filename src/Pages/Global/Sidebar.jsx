@@ -112,6 +112,7 @@ const Sidebar = () => {
                 {cookies.get("_auth_verify")}
               </Typography>
             </Box>
+            
           </Box>
           {/* Menu Items */}
           <Box margin="15% 0">
