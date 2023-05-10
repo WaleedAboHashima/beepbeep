@@ -12,7 +12,7 @@ import RestAndMarket from "./Pages/RestandMarket";
 import Captain from "./Pages/Captain";
 import Delivered from "./Pages/Orders/Delivered";
 import Denied from "./Pages/Orders/Denied";
-import Map from "./Pages/Orders/Map";
+import Map from "./Pages/Map";
 import Active from "./Pages/Places/Active";
 import Forbidden from "./Pages/Places/Forbidden";
 import Requests from "./Pages/Places/Requests";
@@ -23,7 +23,7 @@ import Attendace from "./Pages/Attendance/Attendace";
 
 function App() {
   const cookies = new Cookies();
-  const verifyToken = '#%!TkzsOkcaKenasdN'
+  const verifyToken = "#%!TkzsOkcaKenasdN";
   return (
     <>
       {isMobile ? (
@@ -38,7 +38,8 @@ function App() {
         </Box>
       ) : (
         <>
-          {cookies.get("_auth_token") && cookies.get("_auth_verify_token").startsWith(verifyToken) ? (
+          {cookies.get("_auth_token") &&
+          cookies.get("_auth_verify_token").startsWith(verifyToken) ? (
             <>
               <div className="App" dir="rtl">
                 <Sidebar />
@@ -54,12 +55,12 @@ function App() {
                     <Route path="current" element={<Current />} />
                     <Route path="delivered" element={<Delivered />} />
                     <Route path="denied" element={<Denied />} />
-                    <Route path="map" element={<Map />} />
                     <Route path="activePlaces" element={<Active />} />
                     <Route path="forbiddenPlaces" element={<Forbidden />} />
                     <Route path="joinRequests" element={<Requests />} />
                     <Route path="addStoreAcc" element={<AddStore />} />
                     <Route path="attendance" element={<Attendace />} />
+                    <Route path="map/:inlat/:inlong/:outlat/:outlong/:intime/:outtime" element={<Map />} />
                   </Routes>
                 </main>
               </div>
