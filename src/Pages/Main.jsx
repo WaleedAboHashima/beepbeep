@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useDispatch, useSelector } from "react-redux";
 import { GetAllLocations } from "../apis/Map/GetAllLocations";
@@ -10,7 +11,7 @@ const Main = () => {
   const state = useSelector((state) => state.Location);
   const [map, setMap] = useState(null);
   const [marker, setMarker] = useState(null);
-
+  mapboxgl.workrClass = MapboxWorker;
   const handleMap = () => {
     mapboxgl.accessToken =
       "pk.eyJ1IjoieGt1c2hpcm94IiwiYSI6ImNsaGdybTJzbzAxZXUzZG82aW9temh2OWsifQ.FZHjpa2RzYkYVQn0EWzzYA";
