@@ -112,7 +112,6 @@ const Sidebar = () => {
                 {cookies.get("_auth_verify")}
               </Typography>
             </Box>
-            
           </Box>
           {/* Menu Items */}
           <Box margin="15% 0">
@@ -279,6 +278,12 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            <Item
+              title="حضور و غياب"
+              to="/attendance"
+              selected={selected}
+              setSelected={setSelected}
+            />
             <MenuItem
               style={{
                 textAlign: "right",
@@ -289,7 +294,8 @@ const Sidebar = () => {
                 fontSize: "18px",
               }}
               onClick={() => {
-                cookies.remove("token");
+                cookies.remove("_auth_token");
+                localStorage.removeItem("_auth_local_token");
                 window.location.pathname = "/";
               }}
               dir="rtl"

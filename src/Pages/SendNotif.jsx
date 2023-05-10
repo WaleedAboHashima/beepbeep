@@ -10,7 +10,7 @@ const SendNotif = () => {
     <Box
       display="flex"
       alignItems="center"
-      gap="150px"
+      gap="20px"
       flexDirection="column"
       sx={{ backgroundColor: "#ffc90b" }}
       height="100vh"

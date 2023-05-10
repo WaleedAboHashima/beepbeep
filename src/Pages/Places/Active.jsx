@@ -205,7 +205,7 @@ const Active = () => {
         checkboxSelection
         autoPageSize
         localeText={arabicLocaleText}
-        sx={{ "& .MuiTablePagination-root": { direction: "ltr" } }}
+        sx={{ "& .MuiTablePagination-root": { direction: "ltr" }, width: "100%" }}
       />
     </Box>
   );

@@ -111,7 +111,7 @@ const Denied = () => {
     {
       field: "storeName",
       headerName: "اسم المتجر",
-      flex: 1,
+      flex: 1.2,
     },
     {
       field: "storeAdress",
@@ -131,13 +131,13 @@ const Denied = () => {
           </Box>
         );
       },
-      flex: 1,
+      flex: 1.5,
     },
-    { field: "orderAdress", headerName: "عنوان الطلب", flex: 1 },
-    { field: "orderPrice", headerName: "سعر الطلب", flex: 1 },
+    { field: "orderAdress", headerName: "عنوان الطلب", flex: 1.5 },
+    { field: "orderPrice", headerName: "سعر الطلب", flex: 1.5 },
     { field: "orderType", headerName: "نوع الطلب", flex: 1.5 },
-    { field: "deliveryCost", headerName: "كلفه التوصيل", flex: 1 },
-    { field: "notes", headerName: "الملاحظات", flex: 1 },
+    { field: "deliveryCost", headerName: "كلفه التوصيل", flex: 1.5 },
+    { field: "notes", headerName: "الملاحظات", flex: 1.5 },
     {
       field: "info",
       headerName: "حاله الطلب",
@@ -145,7 +145,7 @@ const Denied = () => {
       renderCell: ({ row: { id ,orderInfo } }) => {
         return (
           <Box
-            width="60%"
+            width="80%"
             p="5px"
             display="flex"
             backgroundColor={
@@ -187,9 +187,9 @@ const Denied = () => {
         );
       },
     },
-    { field: "deniedReason", headerName: "سبب الرفض", flex: 2 },
-    { field: "deliveryName", headerName: "اسم السائق", flex: 1 },
-    { field: "deliveryNumber", headerName: "هاتف السائق", flex: 1 },
+    { field: "deniedReason", headerName: "سبب الرفض", flex: 1.5 },
+    { field: "deliveryName", headerName: "اسم السائق", flex: 1.5 },
+    { field: "deliveryNumber", headerName: "هاتف السائق", flex: 1.5 },
     {
       filed: "actions",
       headerName: "أجراءات",

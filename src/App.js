@@ -19,9 +19,11 @@ import Requests from "./Pages/Places/Requests";
 import AddStore from "./Pages/Places/AddStore";
 import { isMobile } from "react-device-detect";
 import { Box } from "@mui/material";
+import Attendace from "./Pages/Attendance/Attendace";
 
 function App() {
   const cookies = new Cookies();
+  const verifyToken = '#%!TkzsOkcaKenasdN'
   return (
     <>
       {isMobile ? (
@@ -36,7 +38,7 @@ function App() {
         </Box>
       ) : (
         <>
-          {cookies.get("token") ? (
+          {cookies.get("_auth_token") && cookies.get("_auth_verify_token").startsWith(verifyToken) ? (
             <>
               <div className="App" dir="rtl">
                 <Sidebar />
@@ -57,6 +59,7 @@ function App() {
                     <Route path="forbiddenPlaces" element={<Forbidden />} />
                     <Route path="joinRequests" element={<Requests />} />
                     <Route path="addStoreAcc" element={<AddStore />} />
+                    <Route path="attendance" element={<Attendace />} />
                   </Routes>
                 </main>
               </div>

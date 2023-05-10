@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
 
 html, body,#root,.App,.content {
   height: 100%;
   width: 100%;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   margin: 0;
   overflow: hidden;
 }
@@ -47,4 +50,12 @@ html, body,#root,.App,.content {
   direction: rtl;
   text-align: right;
 
+}
+
+.marker {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: blue;
 }

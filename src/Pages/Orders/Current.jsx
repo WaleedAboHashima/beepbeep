@@ -8,7 +8,6 @@ import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import HourglassEmptyOutlinedIcon from "@mui/icons-material/HourglassEmptyOutlined";
 import LockIcon from "@mui/icons-material/Lock";
 import ReplayOutlinedIcon from "@mui/icons-material/ReplayOutlined";
-import DownloadDoneIcon from "@mui/icons-material/DownloadDone";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 
 const Current = () => {
@@ -135,15 +134,15 @@ const Current = () => {
       },
       flex: 1,
     },
-    { field: "orderAdress", headerName: "عنوان الطلب", flex: 1 },
+    { field: "orderAdress", headerName: "عنوان الطلب" },
     { field: "orderPrice", headerName: "سعر الطلب", flex: 1 },
-    { field: "orderType", headerName: "نوع الطلب", flex: 1 },
-    { field: "deliveryCost", headerName: "كلفه التوصيل", flex: 1 },
+    { field: "orderType", headerName: "نوع الطلب", flex: 2 },
+    { field: "deliveryCost", headerName: "كلفه التوصيل", flex: 1.5 },
     { field: "notes", headerName: "الملاحظات", flex: 1 },
     {
       field: "info",
       headerName: "حاله الطلب",
-      flex: 3,
+      flex: 4,
       renderCell: ({ row: { orderInfo } }) => {
         return (
           <Box
@@ -157,8 +156,6 @@ const Current = () => {
                 ? "Orange"
                 : orderInfo === 900
                 ? "Red"
-                : orderInfo === 1000
-                ? "#20525C"
                 : "#0071bd"
             }
             borderRadius="4px"
@@ -169,8 +166,6 @@ const Current = () => {
               <HourglassEmptyOutlinedIcon sx={{ color: "white", ml: 1 }} />
             ) : orderInfo === 900 ? (
               <CloseOutlinedIcon sx={{ color: "white", ml: 1 }} />
-            ) : orderInfo === 1000 ? (
-              <DownloadDoneIcon sx={{ color: "white", ml: 1 }} />
             ) : (
               <MoreHorizOutlinedIcon sx={{ color: "white", ml: 1 }} />
             )}
@@ -181,8 +176,6 @@ const Current = () => {
                 ? "الطلب مؤجل"
                 : orderInfo === 900
                 ? "الطلب مرفوض"
-                : orderInfo === 1000
-                ? "تم التسليم ولاكن مؤجل"
                 : "في الانتظار"}
             </Typography>
           </Box>
@@ -195,7 +188,7 @@ const Current = () => {
     {
       filed: "actions",
       headerName: "أجراءات",
-      flex: 1.2,
+      flex: 2,
       renderCell: ({ row: { orderInfo, orderType } }) => {
         return (
           <>
@@ -219,24 +212,6 @@ const Current = () => {
                     }}
                   >
                     <LockIcon sx={{ color: "orange" }} />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip title="راجع" placement="top">
-                  <IconButton
-                    onClick={() => {
-                      // setFormOpen(!formOpen);
-                      // setUserDetails({ id: _id, name: username });
-                    }}
-                  >
-                    <ReplayOutlinedIcon sx={{ color: "red" }} />
-                  </IconButton>
-                </Tooltip>
-              </Box>
-            ) : orderInfo === 1000 && orderType === "طلبات المحافظات" ? (
-              <Box>
-                <Tooltip title="الصوره" placement="right">
-                  <IconButton>
-                    <ImageOutlinedIcon sx={{ color: "#89CFF0" }} />
                   </IconButton>
                 </Tooltip>
                 <Tooltip title="راجع" placement="top">
@@ -361,13 +336,12 @@ const Current = () => {
         disableRowSelectionOnClick
         checkboxSelection
         autoPageSize
+        col
         sx={{
           backgroundColor: "white",
-          width: "100%",
           height: "100%",
           border: "1px solid black",
           "& .MuiTablePagination-root": { direction: "ltr" },
-          overflow: "auto"
         }}
         rows={rows.map((user, index) => ({
           id: index + 1,
