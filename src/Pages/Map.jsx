@@ -50,7 +50,6 @@ const Map = () => {
         }
       }
     });
-
     setMap(newMap);
 
     return () => {

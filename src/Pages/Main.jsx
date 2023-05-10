@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
-import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+import MapboxWorker from "mapbox-gl/dist/mapbox-gl-csp-worker";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useDispatch, useSelector } from "react-redux";
 import { GetAllLocations } from "../apis/Map/GetAllLocations";
